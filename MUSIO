@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080711">
+<title>MUSIOU — The Art Archive</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&display=swap');
+:root{--bg:#080711;--panel:#100e1d;--cyan:#54f5ff;--pink:#ff45d4;--violet:#9a65ff;--muted:#aaa5bd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 5%,#241044 0,transparent 35%),radial-gradient(ellipse at 90% 30%,#082b37 0,transparent 30%),var(--bg);color:#f7f4ff;font-family:Vazirmatn, sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:15px 7%;background:#080711c9;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}
+.logo{font-size:20px;font-weight:900;letter-spacing:4px;color:white;text-shadow:0 0 12px var(--cyan),0 0 26px var(--pink);direction:ltr}
+nav a{color:#d9d4e9;text-decoration:none;margin:0 10px;font-size:13px}nav a:hover{color:var(--cyan)}
+.hero{min-height:78vh;display:grid;place-items:center;text-align:center;padding:70px 20px;position:relative}
+.kicker{color:var(--cyan);letter-spacing:4px;font-size:12px;direction:ltr}
+h1{font-size:clamp(58px,13vw,140px);line-height:1;margin:22px 0;letter-spacing:5px;direction:ltr;color:#fff;text-shadow:0 0 8px #fff,0 0 22px var(--cyan),0 0 48px var(--pink),0 0 90px #8d3fff}
+.hero p{max-width:600px;color:#c3bdd3;line-height:2;margin:20px auto 30px}
+.btn{border:1px solid var(--cyan);color:white;background:#54f5ff12;padding:12px 22px;border-radius:7px;text-decoration:none;display:inline-block;cursor:pointer;font:inherit;box-shadow:0 0 16px #54f5ff25;transition:.2s}
+.btn:hover{background:#54f5ff25;box-shadow:0 0 25px #54f5ff55;transform:translateY(-2px)}.btn.pink{border-color:var(--pink);box-shadow:0 0 15px #ff45d422}
+section{padding:65px 7%;position:relative}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:28px}.eyebrow{color:var(--pink);font-size:11px;letter-spacing:3px;direction:ltr}.section-head h2{margin:5px 0;font-size:clamp(25px,4vw,38px)}.section-head p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.card{background:linear-gradient(145deg,#171326,#0d0b17);border:1px solid #ffffff17;border-radius:13px;overflow:hidden;transition:.25s;min-width:0}
+.card:hover{transform:translateY(-5px);border-color:#54f5ff88;box-shadow:0 10px 35px #54f5ff12}
+.thumb{height:190px;background:linear-gradient(135deg,#25133e,#102d39);display:grid;place-items:center;overflow:hidden;color:#c7c1d8}.thumb img,.thumb video{width:100%;height:100%;object-fit:cover}.card-body{padding:15px}.card h3{margin:0 0 5px;font-size:16px}.card p{color:var(--muted);font-size:12px;line-height:1.8;margin:0 0 12px}.tag{font-size:10px;color:var(--cyan);letter-spacing:1px}
+audio{width:100%;height:34px;filter:invert(.9) hue-rotate(145deg)}
+.empty{border:1px dashed #ffffff35;padding:35px;text-align:center;color:var(--muted);border-radius:12px;grid-column:1/-1}
+.admin{background:#0d0b18;border:1px solid #9a65ff66;border-radius:14px;padding:22px;max-width:850px}
+.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+input,textarea,select{width:100%;padding:12px;background:#080711;color:white;border:1px solid #ffffff25;border-radius:7px;font:inherit;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--cyan)}textarea{min-height:75px;resize:vertical}.wide{grid-column:1/-1}.hint{color:#aaa5bd;font-size:12px;line-height:1.9}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.danger{border-color:#ff6688;color:#ff9ab0}
+footer{padding:30px 7%;border-top:1px solid #ffffff15;color:#827c96;font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#toast{position:fixed;bottom:20px;left:20px;background:#19152a;border:1px solid var(--cyan);padding:12px 17px;border-radius:8px;display:none;z-index:30}
+@media(max-width:650px){nav{padding:13px 5%}nav a{margin:0 4px;font-size:11px}.hero{min-height:70vh}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}.section-head{display:block}}
+</style></head>
+<body>
+<nav><div class="logo">MUSIOU<span style="color:var(--pink)">.</span></div><div><a href="#works">آثار</a><a href="#music">موسیقی</a><a href="#about">درباره</a><a href="#studio">استودیو</a></div></nav>
+<header class="hero"><div><div class="kicker">WELCOME TO MY DIGITAL UNIVERSE</div><h1>MUSIOU</h1><div style="color:var(--pink);letter-spacing:5px;font-size:12px">THE ART ARCHIVE</div><p>اینجا دنیای ساخته‌های موسیو است؛ مجموعه‌ای از تصویرها، صداها، ویدئوها و ایده‌هایی که از ذهن به اثر تبدیل شده‌اند.</p><a class="btn" href="#works">ورود به گالری آثار</a> <a class="btn pink" href="#studio">افزودن اثر +</a></div></header>
+<section id="works"><div class="section-head"><div><div class="eyebrow">VISUAL COLLECTION</div><h2>گالری آثار</h2></div><p>تصاویر و ویدئوهای منتخب</p></div><div class="grid" id="worksGrid"><div class="empty">هنوز اثری اضافه نشده؛ اولین اثر را از بخش استودیو وارد کن.</div></div></section>
+<section id="music"><div class="section-head"><div><div class="eyebrow">SOUND & ATMOSPHERE</div><h2>آرشیو موسیقی</h2></div><p>موسیقی‌های منتخب موسیو</p></div><div class="grid" id="musicGrid"><div class="empty">هنوز قطعه‌ای در آرشیو نیست.</div></div></section>
+<section id="about"><div class="section-head"><div><div class="eyebrow">BEHIND THE CREATION</div><h2>درباره MUSIOU</h2></div></div><div class="admin"><p style="line-height:2;color:#c9c3d8;margin:0">یک آرشیو شخصی برای نمایش خلاقیت، هنر دیجیتال، پروژه‌های تصویری و صدا. هر اثر، بخشی از جهان موسیو است.</p></div></section>
+<section id="studio"><div class="section-head"><div><div class="eyebrow">CREATOR STUDIO</div><h2>استودیوی مدیریت آثار</h2></div></div>
+<div class="admin"><p class="hint">از این قسمت عکس، ویدئو یا موسیقی انتخاب کن و به گالری اضافه کن. فایل‌ها در حافظه همین مرورگر ذخیره می‌شوند؛ برای نمایش عمومی به همه بازدیدکنندگان، باید فایل‌ها را هم در نسخه آنلاین سایت منتشر کنی.</p>
+<div class="formgrid"><input id="title" placeholder="عنوان اثر (مثلاً پروژه شماره ۱)"><select id="type"><option value="image">تصویر</option><option value="video">ویدئو</option><option value="audio">موسیقی</option></select><textarea class="wide" id="description" placeholder="توضیح کوتاه درباره اثر (اختیاری)"></textarea><input class="wide" id="file" type="file" accept="image/*,video/*,audio/*"></div>
+<div class="actions"><button class="btn" id="addBtn">افزودن به آرشیو</button><button class="btn danger" id="clearBtn">پاک‌کردن آرشیو این مرورگر</button></div><p class="hint">فرمت‌های رایج تصویر، MP3، WAV و MP4 پشتیبانی می‌شوند. حجم فایل‌های بزرگ ممکن است با محدودیت حافظه مرورگر روبه‌رو شود.</p></div></section>
+<footer><span>© <span id="year"></span> MUSIOU — THE ART ARCHIVE</span><span>BUILT FOR CREATION · DESIGNED TO GLOW</span></footer><div id="toast"></div>
+<script>
+const DB='musiou_archive_v1';let db;
+const req=indexedDB.open(DB,1);
+req.onupgradeneeded=e=>e.target.result.createObjectStore('items',{keyPath:'id',autoIncrement:true});
+req.onsuccess=e=>{db=e.target.result;render()};
+req.onerror=()=>notify('ذخیره‌سازی در این مرورگر در دسترس نیست.');
+const $=id=>document.getElementById(id);
+function notify(s){$('toast').textContent=s;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2600)}
+function allItems(){return new Promise((res,rej)=>{let r=db.transaction('items').objectStore('items').getAll();r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+async function render(){if(!db)return;let items=await allItems();let works=items.filter(x=>x.type!=='audio'),music=items.filter(x=>x.type==='audio');$('worksGrid').innerHTML='';$('musicGrid').innerHTML='';
+if(!works.length)$('worksGrid').innerHTML='<div class="empty">هنوز اثری اضافه نشده؛ اولین اثر را از بخش استودیو وارد کن.</div>';
+if(!music.length)$('musicGrid').innerHTML='<div class="empty">هنوز قطعه‌ای در آرشیو نیست.</div>';
+works.forEach(x=>{let url=URL.createObjectURL(x.file),media=x.type==='video'?`<video src="${url}" controls></video>`:`<img src="${url}" alt="">`;let c=document.createElement('article');c.className='card';c.innerHTML=`<div class="thumb">${media}</div><div class="card-body"><div class="tag">${x.type==='video'?'VIDEO':'VISUAL ART'}</div><h3></h3><p></p><button class="btn danger del">حذف اثر</button></div>`;c.querySelector('h3').textContent=x.title;c.querySelector('p').textContent=x.description||'اثر ثبت‌شده در آرشیو MUSIOU';c.querySelector('.del').onclick=()=>removeItem(x.id);$('worksGrid').append(c)});
+music.forEach(x=>{let url=URL.createObjectURL(x.file),c=document.createElement('article');c.className='card';c.innerHTML='<div class="card-body"><div class="tag">AUDIO ARCHIVE</div><h3></h3><p></p><audio controls></audio><div style="margin-top:12px"><button class="btn danger del">حذف قطعه</button></div></div>';c.querySelector('h3').textContent=x.title;c.querySelector('p').textContent=x.description||'قطعه‌ای از آرشیو موسیقی';c.querySelector('audio').src=url;c.querySelector('.del').onclick=()=>removeItem(x.id);$('musicGrid').append(c)})}
+$('addBtn').onclick=()=>{let file=$('file').files[0],type=$('type').value,title=$('title').value.trim();if(!file||!title){notify('عنوان و فایل اثر را وارد کن.');return}let valid=type==='image'?file.type.startsWith('image/'):type==='video'?file.type.startsWith('video/'):file.type.startsWith('audio/');if(!valid){notify('نوع فایل با دسته انتخاب‌شده هماهنگ نیست.');return}let tx=db.transaction('items','readwrite');tx.objectStore('items').add({title,description:$('description').value.trim(),type,file,created:Date.now()});tx.oncomplete=()=>{notify('اثر به آرشیو اضافه شد.');$('title').value='';$('description').value='';$('file').value='';render()};tx.onerror=()=>notify('ذخیره فایل انجام نشد؛ احتمالاً حجم آن زیاد است.')};
+function removeItem(id){let tx=db.transaction('items','readwrite');tx.objectStore('items').delete(id);tx.oncomplete=render}
+$('clearBtn').onclick=()=>{if(confirm('تمام آثار ذخیره‌شده در همین مرورگر پاک شوند؟')){let tx=db.transaction('items','readwrite');tx.objectStore('items').clear();tx.oncomplete=()=>{render();notify('آرشیو این مرورگر پاک شد.')}}};
+$('year').textContent=new Date().getFullYear();
+</script></body></html>
